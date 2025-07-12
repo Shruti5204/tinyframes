@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TinyFrames by Shru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(...), url('https://unsplash.com/photos/background-pattern-h2O5HI6bE1c') no-repeat center center/cover;
+      background-size: cover;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(180, 165, 240, 0.7), rgba(200, 180, 255, 0.8)), url('https://unsplash.com/photos/background-pattern-h2O5HI6bE1c') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #8a50cc;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #c79aff;
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .intro {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro h2 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: #a86bd8;
+    }
+
+    .intro p {
+      font-size: 2rem;
+      color: #555;
+    }
+
+    .gallery {
+      column-count: 3;
+      column-gap: 1rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(160, 120, 200, 0.7);
+      color: #fff;
+      padding: 1rem;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+form.commission-form {
+      max-width: 800px;
+      margin: 3rem auto 4rem auto;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      color: #333;
+    }
+    form.commission-form h2 {
+      text-align: center;
+      color: #a86bd8;
+      margin-bottom: 1rem;
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+    }
+    form.commission-form label {
+      display: block;
+      margin: 0.75rem 0 0.25rem 0;
+      font-weight: 600;
+    }
+    form.commission-form input[type="text"],
+    form.commission-form input[type="contact number"],
+    form.commission-form input[type="email"],
+    form.commission-form select,
+    form.commission-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1.5rem;
+      resize: vertical;
+    }
+    form.commission-form textarea {
+      min-height: 80px;
+    }
+    form.commission-form input[type="file"] {
+      margin-top: 0.5rem;
+    }
+    form.commission-form button {
+      background: #c79aff;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    form.commission-form button:hover {
+      background: #9a5edb;
+    }
+   @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .gallery {
+        column-count: 2;
+      }
+      form.commission-form {
+        margin: 2rem 1rem 3rem 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TinyFrames by Shru</h1>
+    <p>Mini Masterpieces Made for You</p>
+    <a href="#intro" class="btn">See My Work</a>
+  </header>
+
+  <section class="intro" id="intro">
+    <h2>Hello! I'm Shruti</h2>
+    <p>
+      I'm a self-taught artist who creates heartwarming and personalized artwork — from tiny couple portraits to soulful scenes. Each painting is made with love, coffee breaks, and late-night ideas.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="couple8.jpg" alt="Art 1">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple10.jpg" alt="Art 2">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+     <div class="gallery-item">
+      <img src="couple5.jpg" alt="Art 3">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple9.jpg" alt="Art 4">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple6.jpg" alt="Art 4">
+      <div class="overlay">Couple Portrait – 4x4 – ₹300</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple7.jpg" alt="Art 5">
+      <div class="overlay">Couple Portrait – 4x4 – ₹300</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couples1.jpg.jpg" alt="Art 6">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple2.jpg" alt="Art 7">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple3.jpg" alt="Art 8">
+      <div class="overlay">Couple Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="siblings.jpg" alt="Art 9">
+      <div class="overlay">siblings Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="mom.jpg" alt="Art 10">
+      <div class="overlay">Mother-daughter Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="couple4.jpg" alt="Art 11">
+      <div class="overlay">Single Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="single pic 1.jpg" alt="Art 12">
+      <div class="overlay">Single Portrait – 4x4 – ₹400</div>
+    </div>
+    <div class="gallery-item">
+      <img src="available1.jpg" alt="Art 13">
+      <div class="overlay">cute cats Portrait – 4x4 – ₹300</div>
+    </div>
+    <div class="gallery-item">
+      <img src="available2.jpg" alt="Art 14">
+      <div class="overlay">Jerry Portrait – 4x4 – ₹300</div>
+    </div>
+    <div class="gallery-item">
+      <img src="available3.jpg" alt="Art 15">
+      <div class="overlay">Jagannath Pattachitra – 6inch – ₹600</div>
+    </div>
+  </section>
+
+  <section>
+    <form class="commission-form" action="https://formspree.io/f/xgvydwlg" method="POST" enctype="multipart/form-data">
+      <h2>Commission a Painting</h2>
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="contact number">Contact Number *</label>
+      <input type="contact number" id="contact number" name="_replyto" placeholder="Your whats app number" required />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="_replyto" placeholder="Your email address" required />
+
+      <label for="painting-type">Type of Painting *</label>
+      <select id="painting-type" name="painting-type" required>
+        <option value="" disabled selected>Select a type</option>
+        <option value="Single Portrait">Single Portrait</option>
+        <option value="Couple Portrait">Couple Portrait</option>
+        <option value="Group Portrait">Group Portrait</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="size">Size Preference</label>
+      <select id="size" name="size" required>
+        <option value="" disabled selected>Select a size</option>
+        <option value="4x4">4x4</option>
+        <option value="4x6">4x6</option>
+        <option value="6x6">6x6</option>
+        <option value="6x8">4x4</option>
+        <option value="8x8">8x8</option>
+      </select>
+
+
+     <label for="image-link">Reference Image Link </label>
+<input type="text" id="image-link" name="image-link" placeholder="Paste Google Drive / Instagram / link here" />
+
+
+      <label for="details">Additional Details</label>
+      <textarea id="details" name="details" placeholder="Describe any caption or your personalization ideas here..."></textarea>
+
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+</body>
+</html>
